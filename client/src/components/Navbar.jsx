@@ -25,7 +25,7 @@ const Navbar = () => {
                         </Link>
                         {showAboutSubmenu && (
                             <ul className="dropdown-menu">
-                                <li><Link to="/about/history">Sejarah Perusahaan</Link></li>
+                                <li><Link to="/about/history">Sejarah Perusahaan1</Link></li>
                                 <li><Link to="/about/awards">Penghargaan</Link></li>
                                 <li><Link to="/about/subsidiaries">Anak Perusahaan</Link></li>
                             </ul>
