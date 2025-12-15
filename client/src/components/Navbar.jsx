@@ -1,17 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
-import logo from '../assets/images/logo.png';
+import logoWhite from '../assets/images/logo-putih.png';
+import logoColor from '../assets/images/logo-warna.png';
 
 const Navbar = () => {
     const [showAboutSubmenu, setShowAboutSubmenu] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="navbar-container">
                 <Link to="/" className="nav-logo">
-                    <img src={logo} alt="Fachri Property Group" className="logo-image" />
-                    <span>FACHRI PROPERTY GROUP</span>
+                    <img 
+                        src={scrolled ? logoColor : logoWhite} 
+                        alt="Fachri Property Group" 
+                        className="logo-image" 
+                    />
                 </Link>
                 <ul className="navbar-menu">
                     
@@ -25,7 +39,12 @@ const Navbar = () => {
                         </Link>
                         {showAboutSubmenu && (
                             <ul className="dropdown-menu">
+<<<<<<< HEAD
                                 <li><Link to="/about/history">Sejarah Perusahaan1</Link></li>
+=======
+                                <li><Link to="/about/history">Sejarah Perusahaan</Link></li>
+                                <li><Link to="/about/history">Menegement</Link></li>
+>>>>>>> 5ebe391634f13a137900ec38ee2091691a94a5d7
                                 <li><Link to="/about/awards">Penghargaan</Link></li>
                                 <li><Link to="/about/subsidiaries">Anak Perusahaan</Link></li>
                             </ul>

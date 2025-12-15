@@ -1,11 +1,23 @@
 .navbar {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  position: sticky;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
   padding: 15px 0;
+<<<<<<< HEAD
   font-family: 'Segoe UI', 'Roboto', 'Arial', 'Helvetica Neue', sans-serif;
+=======
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+>>>>>>> 5ebe391634f13a137900ec38ee2091691a94a5d7
 }
 
 .navbar-container {
@@ -40,12 +52,12 @@
 }
 
 .logo-image {
-    height: 40px;
-    width: 40px;
+    height: 15px;
+    width: 15px;
 }
 
 .navbar-logo img {
-  height: 40px;
+  height: 15px;
 }
 
 .navbar-logo span {
@@ -68,7 +80,7 @@
 
 .navbar-link {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   font-weight: 500;
   padding: 10px 15px;
   transition: color 0.3s;
@@ -77,6 +89,10 @@
   gap: 5px;
   font-size: 14px;
   letter-spacing: 0.3px;
+}
+
+.navbar.scrolled .navbar-link {
+  color: #333;
 }
 
 .navbar-link:hover {
